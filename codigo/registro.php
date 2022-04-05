@@ -60,6 +60,7 @@
         <input type="hidden" name="nuevousuario">
         <input type="submit" value="Register!">
     </form>
+    <br>
     <a href="listar.php">Listar usuarios por país</a>
 </body>
 </html>

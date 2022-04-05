@@ -3,6 +3,20 @@
 <head>
     <title>Registro</title>
     <?php $Countries = array("España", "Chile", "Argentina", "Brasil", "Angola", "Guinea"); ?> <!--- Esto no deberiamos ponerlo, solo usarlo --->
+</head>
+<body>
+    <form method="post">
+        <label for="pais">Country:</label>
+        <select name="pais">
+            <?php for ($i = 0; $i < count($Countries); $i++):?>
+                <option value=<?= $i ?>><?= $Countries[$i] ?></option>
+            <?php endfor; ?>
+        </select><br>
+
+        <input type="hidden" name="listarusuarios">
+        <input type="submit" value="Listar!">
+    </form>
+
     <?php
         if (isset($_POST["listarusuarios"])):
             $conexion = mysqli_connect("localhost", "root", "", "examen");
@@ -22,19 +36,7 @@
             endif;
         endif;
     ?>
-</head>
-<body>
-    <form method="post">
-        <label for="pais">Country:</label>
-        <select name="pais">
-            <?php for ($i = 0; $i < count($Countries); $i++):?>
-                <option value=<?= $i ?>><?= $Countries[$i] ?></option>
-            <?php endfor; ?>
-        </select><br>
-
-        <input type="hidden" name="listarusuarios">
-        <input type="submit" value="Listar!">
-    </form>
+    <br>
     <a href="registro.php">Registro</a>
 </body>
 </html>
